@@ -1,0 +1,50 @@
+﻿Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+10 packages can be updated.
+10 updates are security updates.
+
+Last login: Tue Apr 17 21:26:12 2018 from 172.25.26.113
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ docker volumes
+docker: 'volumes' is not a docker command.
+See 'docker --help'
+alex@Docker-Ubuntu:~$ docker volume ls
+DRIVER              VOLUME NAME
+local               2e5f9266afbc19227b395f39a91e6505b127ef5cca6f190d9d40cbf60a272f36
+local               jenkins_home
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ docker volume
+
+Usage:  docker volume COMMAND
+
+Manage volumes
+
+Options:
+      --help   Print usage
+
+Commands:
+  create      Create a volume
+  inspect     Display detailed information on one or more volumes
+  ls          List volumes
+  prune       Remove all unused volumes
+  rm          Remove one or more volumes
+
+Run 'docker volume COMMAND --help' for more information on a command.
+alex@Docker-Ubuntu:~$ docker volume inspect jenkins_home 
+[
+    {
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/jenkins_home/_data",
+        "Name": "jenkins_home",
+        "Options": {},
+        "Scope": "local"
+    }
+]

@@ -1,0 +1,2523 @@
+﻿Last login: Thu Apr  5 06:32:09 2018
+[alex@localhost ~]$ 
+[alex@localhost ~]$ docker info
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.26/info: dial unix /var/run/docker.sock: connect: permission denied
+[alex@localhost ~]$ 
+[alex@localhost ~]$ sudo su
+[sudo] password for alex: 
+alex is not in the sudoers file.  This incident will be reported.
+[alex@localhost ~]$ su
+Password: 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# docker info
+Containers: 3
+ Running: 0
+ Paused: 0
+ Stopped: 3
+Images: 9
+Server Version: 1.13.1
+Storage Driver: overlay2
+ Backing Filesystem: xfs
+ Supports d_type: true
+ Native Overlay Diff: true
+Logging Driver: journald
+Cgroup Driver: systemd
+Plugins: 
+ Volume: local
+ Network: bridge host macvlan null overlay
+Swarm: inactive
+Runtimes: docker-runc runc
+Default Runtime: docker-runc
+Init Binary: docker-init
+containerd version:  (expected: aa8187dbd3b7ad67d8e5e3a15115d3eef43a7ed1)
+runc version: N/A (expected: 9df8b306d01f59d3a8029be411de015b7304dd8f)
+init version: N/A (expected: 949e6facb77383876aeff8a6944dde66b3089574)
+Security Options:
+ seccomp
+  WARNING: You're not using the default seccomp profile
+  Profile: /etc/docker/seccomp.json
+ selinux
+Kernel Version: 3.10.0-693.21.1.el7.x86_64
+Operating System: CentOS Linux 7 (Core)
+OSType: linux
+Architecture: x86_64
+Number of Docker Hooks: 3
+CPUs: 1
+Total Memory: 1.701 GiB
+Name: localhost.localdomain
+ID: YWK5:DWSA:QXIK:HFFB:NYQ2:SULK:IMF5:ELC7:NR5N:TFUE:HBZ5:J4H4
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Username: alexcousins
+Registry: https://index.docker.io/v1/
+Experimental: false
+Insecure Registries:
+ 127.0.0.0/8
+Live Restore Enabled: false
+Registries: docker.io (secure)
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                              PORTS               NAMES
+9eacccdd33b2        gitlab/gitlab-ce:latest   "/assets/wrapper"   18 hours ago        Restarting (1) About a minute ago                       gitlab
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS                              PORTS               NAMES
+9eacccdd33b2        gitlab/gitlab-ce:latest   "/assets/wrapper"      18 hours ago        Restarting (1) About a minute ago                       gitlab
+e1549f53fe88        hello-world0.1            "echo 'Hello World'"   24 hours ago        Exited (0) 24 hours ago                                 condescending_dijkstra
+70c154855e72        hello-world               "/hello"               24 hours ago        Exited (0) 24 hours ago                                 silly_bhabha
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# 
+[root@localhost alex]# ifconfig
+bash: ifconfig: command not found
+[root@localhost alex]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:15:5d:88:45:16 brd ff:ff:ff:ff:ff:ff
+    inet 172.25.26.122/28 brd 172.25.26.127 scope global dynamic eth0
+       valid_lft 86340sec preferred_lft 86340sec
+    inet6 fe80::f0c8:9d6a:3e94:1603/64 scope link 
+       valid_lft forever preferred_lft forever
+3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN 
+    link/ether 02:42:6b:be:8e:c8 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:6bff:febe:8ec8/64 scope link 
+       valid_lft forever preferred_lft forever
+Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+10 packages can be updated.
+10 updates are security updates.
+
+Last login: Wed Apr 18 16:18:29 2018 from 172.25.26.113
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ docker ps]
+docker: 'ps]' is not a docker command.
+See 'docker --help'
+alex@Docker-Ubuntu:~$ docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
+
+Running from: /usr/share/jenkins/jenkins.war
+webroot: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Apr 18, 2018 3:21:37 PM Main deleteWinstoneTempContents
+WARNING: Failed to delete the temporary Winstone file /tmp/winstone/jenkins.war
+Apr 18, 2018 3:21:37 PM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @1990ms to org.eclipse.jetty.util.log.JavaUtilLog
+Apr 18, 2018 3:21:37 PM winstone.Logger logInternal
+INFO: Beginning extraction from war file
+Apr 18, 2018 3:21:37 PM org.eclipse.jetty.server.handler.ContextHandler setContextPath
+WARNING: Empty contextPath
+Apr 18, 2018 3:21:38 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.4.z-SNAPSHOT
+Apr 18, 2018 3:21:39 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Apr 18, 2018 3:21:39 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+INFO: DefaultSessionIdManager workerName=node0
+Apr 18, 2018 3:21:39 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+INFO: No SessionScavenger set, using defaults
+Apr 18, 2018 3:21:39 PM org.eclipse.jetty.server.session.HouseKeeper startScavenging
+INFO: Scavenging every 660000ms
+Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Apr 18, 2018 3:21:41 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started w.@30f842ca{/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+Apr 18, 2018 3:21:41 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@28cda624{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+Apr 18, 2018 3:21:41 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @6490ms
+Apr 18, 2018 3:21:41 PM winstone.Logger logInternal
+INFO: Winstone Servlet Engine v4.0 running: controlPort=disabled
+Apr 18, 2018 3:21:44 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Apr 18, 2018 3:21:47 PM hudson.ClassicPluginStrategy createPluginWrapper
+WARNING: Deprecated unpacked classes directory found in /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes
+Apr 18, 2018 3:21:47 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Apr 18, 2018 3:21:48 PM com.groupon.jenkins.DotCiPlugin start
+INFO: /var/jenkins_home/pluginConfigs/dotci.yml file not found.
+Apr 18, 2018 3:21:48 PM ruby.RubyRuntimePlugin start
+INFO: Injecting JRuby into XStream
+Trying to load models from /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/gitlab_notifier.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/crumb_exclusion.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb:25 warning: already initialized constant MultipleScmsPluginAvailable
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:10 warning: already initialized constant MERGE_REQUEST_PROCESSING
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:11 warning: already initialized constant MERGED_BRANCH_PROCESSING
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:12 warning: already initialized constant AUTOMATIC_PROJECT_CREATION_PROPERTY
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:13 warning: already initialized constant MASTER_BRANCH_PROPERTY
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:14 warning: already initialized constant USE_MASTER_PROJECT_NAME_PROPERTY
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:15 warning: already initialized constant DESCRIPTION_PROPERTY
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/unprotected_root_action.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action.rb:12 warning: already initialized constant WEB_HOOK_ROOT_URL
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/api.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/flat_keys_hash.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/flat_keys_hash.rb:4 warning: already initialized constant FLATTENED_KEYS_DELIMITER
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/get_parameters_values.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/get_build_cause.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/security.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/get_build_actions.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/build_scm.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/parse_request.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/parse_request.rb:11 warning: already initialized constant EMPTY_BODY
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/get_jenkins_projects.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/commit.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/merge_request_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/payload_request_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/scm_data.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/request_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/parameters_request_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/abstract_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb:21 warning: already initialized constant MultipleScmsPluginAvailable
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb:25 warning: already initialized constant MultipleScmsPluginAvailable
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb:30 warning: already initialized constant BRANCH_NAME_PARAMETER_ACCEPTED_TYPES
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/repository_uri.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/exceptions/bad_request_exception.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/exceptions/configuration_exception.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/exceptions/not_found_exception.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/util/settings.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/process_commit.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/create_project_for_branch.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/process_delete_commit.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/build_now.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/process_merge_request.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/notify_commit.rb
+Apr 18, 2018 3:22:29 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Apr 18, 2018 3:22:29 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Apr 18, 2018 3:22:33 PM hudson.ExtensionFinder$GuiceFinder$FaultTolerantScope$1 error
+INFO: Failed to instantiate optional component hudson.plugins.build_timeout.operations.AbortAndRestartOperation$DescriptorImpl; skipping
+Apr 18, 2018 3:22:33 PM org.jenkinsci.plugins.dockerbuildstep.DockerBuilder$DescriptorImpl <init>
+WARNING: Docker URL is not set, docker client won't be initialized
+Apr 18, 2018 3:22:35 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Apr 18, 2018 3:22:35 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Apr 18, 2018 3:22:35 PM jenkins.util.groovy.GroovyHookScript execute
+INFO: Executing /var/jenkins_home/init.groovy.d/tcp-slave-agent-port.groovy
+Apr 18, 2018 3:22:35 PM hudson.model.AsyncPeriodicWork$1 run
+INFO: Started Download metadata
+Apr 18, 2018 3:22:35 PM hudson.model.AsyncPeriodicWork$1 run
+INFO: Finished Download metadata. 10 ms
+[ERROR] [04/18/2018 15:22:35.981] [swarm-plugin-akka.actor.default-dispatcher-5] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+Apr 18, 2018 3:22:37 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@5167d7dd: display name [Root WebApplicationContext]; startup date [Wed Apr 18 15:22:37 UTC 2018]; root of context hierarchy
+Apr 18, 2018 3:22:37 PM org.springframework.context.support.AbstractApplicationContext obtainFreshBeanFactory
+INFO: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@5167d7dd]: org.springframework.beans.factory.support.DefaultListableBeanFactory@70f533fa
+Apr 18, 2018 3:22:37 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@70f533fa: defining beans [authenticationManager]; root of factory hierarchy
+Apr 18, 2018 3:22:38 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@5978ba88: display name [Root WebApplicationContext]; startup date [Wed Apr 18 15:22:38 UTC 2018]; root of context hierarchy
+Apr 18, 2018 3:22:38 PM org.springframework.context.support.AbstractApplicationContext obtainFreshBeanFactory
+INFO: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@5978ba88]: org.springframework.beans.factory.support.DefaultListableBeanFactory@313cf994
+Apr 18, 2018 3:22:38 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@313cf994: defining beans [filter,legacy]; root of factory hierarchy
+Apr 18, 2018 3:22:38 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Apr 18, 2018 3:22:38 PM hudson.WebAppMain$3 run
+INFO: Jenkins is fully up and running
+--> setting agent port for jnlp
+--> setting agent port for jnlp... done
+
+
+Apr 18, 2018 3:25:00 PM org.eclipse.jetty.server.session.Session beginInvalidate
+INFO: Session node01bh8zn7mv7we71dial4134tv3i0 already being invalidated
+Apr 18, 2018 3:25:46 PM org.eclipse.jetty.server.session.Session beginInvalidate
+INFO: Session node016lkeaf9qu4rcp6b82m0jviwo1 already being invalidated
+Apr 18, 2018 3:25:49 PM org.eclipse.jetty.server.session.Session beginInvalidate
+INFO: Session node0jbwjhgfnk4331ll556g8xt7my2 already being invalidated
+
+#
+
+
+^CApr 18, 2018 3:26:16 PM winstone.Logger logInternal
+INFO: JVM is terminating. Shutting down Winstone
+Apr 18, 2018 3:26:16 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@28cda624{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+Apr 18, 2018 3:26:16 PM org.eclipse.jetty.server.session.HouseKeeper stopScavenging
+INFO: Stopped scavenging
+Apr 18, 2018 3:26:17 PM jenkins.model.Jenkins cleanUp
+INFO: Stopping Jenkins
+[INFO] [04/18/2018 15:26:16.993] [swarm-plugin-shutdown-hook-1] [CoordinatedShutdown(akka://swarm-plugin)] Starting coordinated shutdown from JVM shutdown hook
+
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+alex@Docker-Ubuntu:~$ docker ps -a
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                       PORTS               NAMES
+4dc143ff5c55        jenkins/jenkins:lts   "/sbin/tini -- /us..."   4 minutes ago       Exited (130) 9 seconds ago                       laughing_wing
+0fd0272d8142        jenkins/jenkins:lts   "/sbin/tini -- /us..."   19 hours ago        Exited (129) 18 hours ago                        elastic_wescoff
+8f3cdf9c6237        jenkins/jenkins:lts   "/sbin/tini -- /us..."   19 hours ago        Exited (130) 19 hours ago                        upbeat_almeida
+94f328726d85        phusion/baseimage     "/bin/bash"              25 hours ago        Exited (0) 19 hours ago                          pingy
+ba1c5bdad723        phusion/baseimage     "/bin/bash"              25 hours ago        Exited (127) 25 hours ago                        quizzical_brattain
+5a712d1b9468        phusion/baseimage     "ping 8.8.8.8"           25 hours ago        Created                                          angry_wiles
+a0471528b1eb        phusion/baseimage     "/bin/bash/ping 8...."   25 hours ago        Created                                          silly_swartz
+5ce4c5ab4280        phusion/baseimage     "/bin/bash ping 8...."   25 hours ago        Exited (127) 25 hours ago                        hopeful_tesla
+ffdbc5b14f98        phusion/baseimage     "/bin/bash"              25 hours ago        Exited (0) 25 hours ago                          stupefied_franklin
+94418a79bd93        phusion/baseimage     "/bin/bas ping 8.8..."   25 hours ago        Created                                          happy_golick
+188f1fa3d709        phusion/baseimage     "/bin/bas ping 8.8..."   25 hours ago        Created                                          confident_goldstine
+10fada4d5852        phusion/baseimage     "/bin/bash"              25 hours ago        Exited (0) 25 hours ago                          inspiring_shaw
+000e81297be7        phusion/baseimage     "/bin/bash"              25 hours ago        Exited (0) 25 hours ago                          condescending_kilby
+15ae7aa4a335        phusion/baseimage     "/bin/bash"              25 hours ago        Exited (0) 25 hours ago                          vigilant_spence
+0ee4cad83c8e        centos                "/bin/bash"              25 hours ago        Exited (137) 19 hours ago                        happy_mcnulty
+64e31118d910        centos                "/bin/bash"              25 hours ago        Exited (0) 25 hours ago                          upbeat_goldwasser
+398466c31e8e        centos                "/bin/bash"              25 hours ago        Exited (0) 25 hours ago                          quirky_meitner
+1bae3e5c4e46        hello-world           "/hello"                 25 hours ago        Exited (0) 25 hours ago                          priceless_almeida
+56c988837f95        ubuntu                "/bin/bash"              30 hours ago        Exited (0) 30 hours ago                          sharp_ritchie
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ docker run -p 8080:8080 -p -name jenkins --retart unless-stopped 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+docker: Invalid containerPort: -name.
+See 'docker run --help'.
+alex@Docker-Ubuntu:~$ docker run -p 8080:8080 -p --name jenkins --retart unless-stopped 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+docker: Invalid containerPort: --name.
+See 'docker run --help'.
+alex@Docker-Ubuntu:~$ 
+alex@Docker-Ubuntu:~$ docker run -p 8080:8080 --name jenkins --retart unless-stopped 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+unknown flag: --retart
+See 'docker run --help'.
+alex@Docker-Ubuntu:~$ docker run --name jenskins --restart unless-stopped -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+Running from: /usr/share/jenkins/jenkins.war
+webroot: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Apr 18, 2018 3:29:06 PM Main deleteWinstoneTempContents
+WARNING: Failed to delete the temporary Winstone file /tmp/winstone/jenkins.war
+Apr 18, 2018 3:29:06 PM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @1077ms to org.eclipse.jetty.util.log.JavaUtilLog
+Apr 18, 2018 3:29:06 PM winstone.Logger logInternal
+INFO: Beginning extraction from war file
+Apr 18, 2018 3:29:06 PM org.eclipse.jetty.server.handler.ContextHandler setContextPath
+WARNING: Empty contextPath
+Apr 18, 2018 3:29:07 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.4.z-SNAPSHOT
+Apr 18, 2018 3:29:07 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Apr 18, 2018 3:29:08 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+INFO: DefaultSessionIdManager workerName=node0
+Apr 18, 2018 3:29:08 PM org.eclipse.jetty.server.session.DefaultSessionIdManager doStart
+INFO: No SessionScavenger set, using defaults
+Apr 18, 2018 3:29:08 PM org.eclipse.jetty.server.session.HouseKeeper startScavenging
+INFO: Scavenging every 600000ms
+Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Apr 18, 2018 3:29:09 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started w.@30f842ca{/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+Apr 18, 2018 3:29:09 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@28cda624{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+Apr 18, 2018 3:29:09 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @4441ms
+Apr 18, 2018 3:29:09 PM winstone.Logger logInternal
+INFO: Winstone Servlet Engine v4.0 running: controlPort=disabled
+Apr 18, 2018 3:29:12 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Apr 18, 2018 3:29:13 PM hudson.ClassicPluginStrategy createPluginWrapper
+WARNING: Deprecated unpacked classes directory found in /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes
+Apr 18, 2018 3:29:13 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Apr 18, 2018 3:29:14 PM com.groupon.jenkins.DotCiPlugin start
+INFO: /var/jenkins_home/pluginConfigs/dotci.yml file not found.
+Apr 18, 2018 3:29:15 PM ruby.RubyRuntimePlugin start
+INFO: Injecting JRuby into XStream
+Trying to load models from /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/gitlab_notifier.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/crumb_exclusion.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb:25 warning: already initialized constant MultipleScmsPluginAvailable
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:10 warning: already initialized constant MERGE_REQUEST_PROCESSING
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:11 warning: already initialized constant MERGED_BRANCH_PROCESSING
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:12 warning: already initialized constant AUTOMATIC_PROJECT_CREATION_PROPERTY
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:13 warning: already initialized constant MASTER_BRANCH_PROPERTY
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:14 warning: already initialized constant USE_MASTER_PROJECT_NAME_PROPERTY
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action_descriptor.rb:15 warning: already initialized constant DESCRIPTION_PROPERTY
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/unprotected_root_action.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/root_action.rb:12 warning: already initialized constant WEB_HOOK_ROOT_URL
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/api.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/flat_keys_hash.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/flat_keys_hash.rb:4 warning: already initialized constant FLATTENED_KEYS_DELIMITER
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/get_parameters_values.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/get_build_cause.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/security.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/get_build_actions.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/build_scm.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/parse_request.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/parse_request.rb:11 warning: already initialized constant EMPTY_BODY
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/services/get_jenkins_projects.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/commit.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/merge_request_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/payload_request_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/scm_data.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/request_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/parameters_request_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/abstract_details.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb:21 warning: already initialized constant MultipleScmsPluginAvailable
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb:25 warning: already initialized constant MultipleScmsPluginAvailable
+/var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/project.rb:30 warning: already initialized constant BRANCH_NAME_PARAMETER_ACCEPTED_TYPES
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/values/repository_uri.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/exceptions/bad_request_exception.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/exceptions/configuration_exception.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/exceptions/not_found_exception.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/util/settings.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/process_commit.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/create_project_for_branch.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/process_delete_commit.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/build_now.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/process_merge_request.rb
+Loading /var/jenkins_home/plugins/gitlab-hook/WEB-INF/classes/models/use_cases/notify_commit.rb
+Apr 18, 2018 3:29:59 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Apr 18, 2018 3:29:59 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Apr 18, 2018 3:30:03 PM hudson.ExtensionFinder$GuiceFinder$FaultTolerantScope$1 error
+INFO: Failed to instantiate optional component hudson.plugins.build_timeout.operations.AbortAndRestartOperation$DescriptorImpl; skipping
+Apr 18, 2018 3:30:03 PM org.jenkinsci.plugins.dockerbuildstep.DockerBuilder$DescriptorImpl <init>
+WARNING: Docker URL is not set, docker client won't be initialized
+Apr 18, 2018 3:30:05 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Apr 18, 2018 3:30:05 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Apr 18, 2018 3:30:05 PM jenkins.util.groovy.GroovyHookScript execute
+INFO: Executing /var/jenkins_home/init.groovy.d/tcp-slave-agent-port.groovy
+[ERROR] [04/18/2018 15:30:05.430] [swarm-plugin-akka.actor.default-dispatcher-2] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+Apr 18, 2018 3:30:06 PM hudson.model.AsyncPeriodicWork$1 run
+INFO: Started Download metadata
+Apr 18, 2018 3:30:06 PM hudson.model.AsyncPeriodicWork$1 run
+INFO: Finished Download metadata. 72 ms
+Apr 18, 2018 3:30:07 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@4e43ab1c: display name [Root WebApplicationContext]; startup date [Wed Apr 18 15:30:07 UTC 2018]; root of context hierarchy
+Apr 18, 2018 3:30:07 PM org.springframework.context.support.AbstractApplicationContext obtainFreshBeanFactory
+INFO: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@4e43ab1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@793d34c5
+Apr 18, 2018 3:30:07 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@793d34c5: defining beans [authenticationManager]; root of factory hierarchy
+Apr 18, 2018 3:30:07 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@20c655bf: display name [Root WebApplicationContext]; startup date [Wed Apr 18 15:30:07 UTC 2018]; root of context hierarchy
+Apr 18, 2018 3:30:07 PM org.springframework.context.support.AbstractApplicationContext obtainFreshBeanFactory
+INFO: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@20c655bf]: org.springframework.beans.factory.support.DefaultListableBeanFactory@5fa37169
+Apr 18, 2018 3:30:07 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5fa37169: defining beans [filter,legacy]; root of factory hierarchy
+Apr 18, 2018 3:30:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Apr 18, 2018 3:30:08 PM hudson.WebAppMain$3 run
+INFO: Jenkins is fully up and running
+--> setting agent port for jnlp
+--> setting agent port for jnlp... done
+
+
+
+Apr 18, 2018 3:31:14 PM org.eclipse.jetty.server.session.Session beginInvalidate
+INFO: Session node03fyj4jnfvbcn184xw3e8tk16x0 already being invalidated
+[ERROR] [04/18/2018 15:35:05.400] [swarm-plugin-akka.actor.default-dispatcher-12] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 15:40:05.412] [swarm-plugin-akka.actor.default-dispatcher-19] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 15:45:05.432] [swarm-plugin-akka.actor.default-dispatcher-26] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 15:50:05.452] [swarm-plugin-akka.actor.default-dispatcher-33] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 15:55:05.472] [swarm-plugin-akka.actor.default-dispatcher-40] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:00:05.492] [swarm-plugin-akka.actor.default-dispatcher-47] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:05:05.512] [swarm-plugin-akka.actor.default-dispatcher-54] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:10:05.534] [swarm-plugin-akka.actor.default-dispatcher-61] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:15:05.551] [swarm-plugin-akka.actor.default-dispatcher-68] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:20:05.571] [swarm-plugin-akka.actor.default-dispatcher-75] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:25:05.593] [swarm-plugin-akka.actor.default-dispatcher-82] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:30:05.612] [swarm-plugin-akka.actor.default-dispatcher-89] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:35:05.640] [swarm-plugin-akka.actor.default-dispatcher-96] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:40:05.665] [swarm-plugin-akka.actor.default-dispatcher-97] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:45:05.672] [swarm-plugin-akka.actor.default-dispatcher-110] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:50:05.692] [swarm-plugin-akka.actor.default-dispatcher-117] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 16:55:05.712] [swarm-plugin-akka.actor.default-dispatcher-124] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:00:05.733] [swarm-plugin-akka.actor.default-dispatcher-131] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:05:05.754] [swarm-plugin-akka.actor.default-dispatcher-138] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:10:05.772] [swarm-plugin-akka.actor.default-dispatcher-145] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:15:05.792] [swarm-plugin-akka.actor.default-dispatcher-152] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:20:05.811] [swarm-plugin-akka.actor.default-dispatcher-159] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:25:05.831] [swarm-plugin-akka.actor.default-dispatcher-166] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:30:05.852] [swarm-plugin-akka.actor.default-dispatcher-173] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:35:05.871] [swarm-plugin-akka.actor.default-dispatcher-180] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:40:05.892] [swarm-plugin-akka.actor.default-dispatcher-187] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:45:05.911] [swarm-plugin-akka.actor.default-dispatcher-194] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:50:05.932] [swarm-plugin-akka.actor.default-dispatcher-201] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 17:55:05.952] [swarm-plugin-akka.actor.default-dispatcher-208] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:00:05.979] [swarm-plugin-akka.actor.default-dispatcher-138] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:05:06.002] [swarm-plugin-akka.actor.default-dispatcher-221] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:10:06.021] [swarm-plugin-akka.actor.default-dispatcher-228] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:15:06.041] [swarm-plugin-akka.actor.default-dispatcher-235] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:20:06.062] [swarm-plugin-akka.actor.default-dispatcher-242] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:25:06.084] [swarm-plugin-akka.actor.default-dispatcher-249] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:30:06.110] [swarm-plugin-akka.actor.default-dispatcher-256] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:35:06.122] [swarm-plugin-akka.actor.default-dispatcher-263] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:40:06.145] [swarm-plugin-akka.actor.default-dispatcher-270] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:45:06.162] [swarm-plugin-akka.actor.default-dispatcher-277] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:50:06.182] [swarm-plugin-akka.actor.default-dispatcher-284] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 18:55:06.205] [swarm-plugin-akka.actor.default-dispatcher-291] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:00:06.228] [swarm-plugin-akka.actor.default-dispatcher-298] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:05:06.241] [swarm-plugin-akka.actor.default-dispatcher-305] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:10:06.262] [swarm-plugin-akka.actor.default-dispatcher-312] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:15:06.282] [swarm-plugin-akka.actor.default-dispatcher-319] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:20:06.302] [swarm-plugin-akka.actor.default-dispatcher-326] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:25:06.322] [swarm-plugin-akka.actor.default-dispatcher-333] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:30:06.346] [swarm-plugin-akka.actor.default-dispatcher-340] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:35:06.362] [swarm-plugin-akka.actor.default-dispatcher-347] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:40:06.381] [swarm-plugin-akka.actor.default-dispatcher-354] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:45:06.403] [swarm-plugin-akka.actor.default-dispatcher-361] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:50:06.422] [swarm-plugin-akka.actor.default-dispatcher-368] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 19:55:06.451] [swarm-plugin-akka.actor.default-dispatcher-375] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:00:06.461] [swarm-plugin-akka.actor.default-dispatcher-381] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:05:06.481] [swarm-plugin-akka.actor.default-dispatcher-388] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:10:06.502] [swarm-plugin-akka.actor.default-dispatcher-395] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:15:06.522] [swarm-plugin-akka.actor.default-dispatcher-402] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:20:06.543] [swarm-plugin-akka.actor.default-dispatcher-409] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:25:06.564] [swarm-plugin-akka.actor.default-dispatcher-416] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:30:06.584] [swarm-plugin-akka.actor.default-dispatcher-423] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:35:06.602] [swarm-plugin-akka.actor.default-dispatcher-430] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:40:06.621] [swarm-plugin-akka.actor.default-dispatcher-437] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:45:06.642] [swarm-plugin-akka.actor.default-dispatcher-444] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:50:06.665] [swarm-plugin-akka.actor.default-dispatcher-451] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 20:55:06.681] [swarm-plugin-akka.actor.default-dispatcher-458] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:00:06.702] [swarm-plugin-akka.actor.default-dispatcher-465] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:05:06.722] [swarm-plugin-akka.actor.default-dispatcher-472] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:10:06.742] [swarm-plugin-akka.actor.default-dispatcher-479] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:15:06.762] [swarm-plugin-akka.actor.default-dispatcher-486] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:20:06.781] [swarm-plugin-akka.actor.default-dispatcher-493] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:25:06.801] [swarm-plugin-akka.actor.default-dispatcher-500] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:30:06.821] [swarm-plugin-akka.actor.default-dispatcher-507] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:35:06.849] [swarm-plugin-akka.actor.default-dispatcher-514] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:40:06.862] [swarm-plugin-akka.actor.default-dispatcher-521] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:45:06.881] [swarm-plugin-akka.actor.default-dispatcher-528] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:50:06.901] [swarm-plugin-akka.actor.default-dispatcher-535] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 21:55:06.921] [swarm-plugin-akka.actor.default-dispatcher-542] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:00:06.941] [swarm-plugin-akka.actor.default-dispatcher-549] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:05:06.962] [swarm-plugin-akka.actor.default-dispatcher-556] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:10:06.981] [swarm-plugin-akka.actor.default-dispatcher-563] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:15:07.010] [swarm-plugin-akka.actor.default-dispatcher-570] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:20:07.023] [swarm-plugin-akka.actor.default-dispatcher-577] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:25:07.041] [swarm-plugin-akka.actor.default-dispatcher-584] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:30:07.061] [swarm-plugin-akka.actor.default-dispatcher-591] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:35:07.090] [swarm-plugin-akka.actor.default-dispatcher-598] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:40:07.101] [swarm-plugin-akka.actor.default-dispatcher-605] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:45:07.121] [swarm-plugin-akka.actor.default-dispatcher-612] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:50:07.142] [swarm-plugin-akka.actor.default-dispatcher-619] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[ERROR] [04/18/2018 22:55:07.161] [swarm-plugin-akka.actor.default-dispatcher-626] [akka://swarm-plugin/user/dead-agentService-reaper] null
+java.lang.NullPointerException
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.reapDeadAgentServices(DeadAgentServiceReaperActor.java:38)
+        at org.jenkinsci.plugins.docker.swarm.DeadAgentServiceReaperActor.lambda$createReceive$14(DeadAgentServiceReaperActor.java:27)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:26)
+        at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:21)
+        at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+        at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+        at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:21)
+        at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+        at akka.actor.Actor.aroundReceive(Actor.scala:517)
+        at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+        at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:132)
+        at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+        at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+        at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+        at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+

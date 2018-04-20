@@ -1,0 +1,187 @@
+﻿Last login: Tue Apr 17 21:49:42 2018 from desktop-69kv0oo.mshome.net
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker info
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@localhost ~]# enc
+-bash: enc: command not found
+[root@localhost ~]# env
+XDG_SESSION_ID=1
+HOSTNAME=localhost.localdomain
+SELINUX_ROLE_REQUESTED=
+TERM=vt100
+SHELL=/bin/bash
+HISTSIZE=1000
+SSH_CLIENT=172.25.26.113 62681 22
+SELINUX_USE_CURRENT_RANGE=
+SSH_TTY=/dev/pts/0
+USER=root
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+MAIL=/var/spool/mail/root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
+PWD=/root
+LANG=en_US.UTF-8
+SELINUX_LEVEL_REQUESTED=
+HISTCONTROL=ignoredups
+SHLVL=1
+HOME=/root
+LOGNAME=root
+SSH_CONNECTION=172.25.26.113 62681 172.25.26.122 22
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+XDG_RUNTIME_DIR=/run/user/0
+_=/usr/bin/env
+[root@localhost ~]# service docker status
+Redirecting to /bin/systemctl status docker.service
+â— docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: http://docs.docker.com
+[root@localhost ~]# 
+[root@localhost ~]# service docker stop
+Redirecting to /bin/systemctl stop docker.service
+[root@localhost ~]# systemctl docker stop
+Unknown operation 'docker'.
+[root@localhost ~]# service docker stop
+Redirecting to /bin/systemctl stop docker.service
+[root@localhost ~]# suod systemctl stop docker.service
+-bash: suod: command not found
+[root@localhost ~]# sudo systemctl stop docker.service
+[root@localhost ~]# sudo systemctl start] docker.service
+Unknown operation 'start]'.
+[root@localhost ~]# sudo systemctl start docker.service
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker info
+Containers: 3
+ Running: 1
+ Paused: 0
+ Stopped: 2
+Images: 9
+Server Version: 1.13.1
+Storage Driver: overlay2
+ Backing Filesystem: xfs
+ Supports d_type: true
+ Native Overlay Diff: true
+Logging Driver: journald
+Cgroup Driver: systemd
+Plugins: 
+ Volume: local
+ Network: bridge host macvlan null overlay
+Swarm: inactive
+Runtimes: docker-runc runc
+Default Runtime: docker-runc
+Init Binary: docker-init
+containerd version:  (expected: aa8187dbd3b7ad67d8e5e3a15115d3eef43a7ed1)
+runc version: N/A (expected: 9df8b306d01f59d3a8029be411de015b7304dd8f)
+init version: N/A (expected: 949e6facb77383876aeff8a6944dde66b3089574)
+Security Options:
+ seccomp
+  WARNING: You're not using the default seccomp profile
+  Profile: /etc/docker/seccomp.json
+ selinux
+Kernel Version: 3.10.0-693.21.1.el7.x86_64
+Operating System: CentOS Linux 7 (Core)
+OSType: linux
+Architecture: x86_64
+Number of Docker Hooks: 3
+CPUs: 1
+Total Memory: 1.701 GiB
+Name: localhost.localdomain
+ID: YWK5:DWSA:QXIK:HFFB:NYQ2:SULK:IMF5:ELC7:NR5N:TFUE:HBZ5:J4H4
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Username: alexcousins
+Registry: https://index.docker.io/v1/
+Experimental: false
+Insecure Registries:
+ 127.0.0.0/8
+Live Restore Enabled: false
+Registries: docker.io (secure)
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                           PORTS                                                          NAMES
+9eacccdd33b2        gitlab/gitlab-ce:latest   "/assets/wrapper"   18 hours ago        Up 1 second (health: starting)   0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 0.0.0.0:23->22/tcp   gitlab
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                                  PORTS               NAMES
+9eacccdd33b2        gitlab/gitlab-ce:latest   "/assets/wrapper"   18 hours ago        Restarting (1) Less than a second ago                       gitlab
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                                     PORTS                                                          NAMES
+9eacccdd33b2        gitlab/gitlab-ce:latest   "/assets/wrapper"   18 hours ago        Up Less than a second (health: starting)   0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 0.0.0.0:23->22/tcp   gitlab
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                           PORTS                                                          NAMES
+9eacccdd33b2        gitlab/gitlab-ce:latest   "/assets/wrapper"   18 hours ago        Up 1 second (health: starting)   0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 0.0.0.0:23->22/tcp   gitlab
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS                              PORTS               NAMES
+9eacccdd33b2        gitlab/gitlab-ce:latest   "/assets/wrapper"      18 hours ago        Restarting (1) About a minute ago                       gitlab
+e1549f53fe88        hello-world0.1            "echo 'Hello World'"   24 hours ago        Exited (0) 24 hours ago                                 condescending_dijkstra
+70c154855e72        hello-world               "/hello"               24 hours ago        Exited (0) 24 hours ago                                 silly_bhabha
+You have new mail in /var/spool/mail/root
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# ifconfig
+-bash: ifconfig: command not found
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:15:5d:88:45:16 brd ff:ff:ff:ff:ff:ff
+    inet 172.25.26.122/28 brd 172.25.26.127 scope global dynamic eth0
+       valid_lft 86354sec preferred_lft 86354sec
+    inet6 fe80::f0c8:9d6a:3e94:1603/64 scope link 
+       valid_lft forever preferred_lft forever
+3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN 
+    link/ether 02:42:6b:be:8e:c8 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:6bff:febe:8ec8/64 scope link 
+       valid_lft forever preferred_lft forever
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps -a]
+unknown shorthand flag: ']' in -]
+See 'docker ps --help'.
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS                              PORTS               NAMES
+9eacccdd33b2        gitlab/gitlab-ce:latest   "/assets/wrapper"      18 hours ago        Restarting (1) About a minute ago                       gitlab
+e1549f53fe88        hello-world0.1            "echo 'Hello World'"   24 hours ago        Exited (0) 24 hours ago                                 condescending_dijkstra
+70c154855e72        hello-world               "/hello"               24 hours ago        Exited (0) 24 hours ago                                 silly_bhabha
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 

@@ -1,0 +1,523 @@
+﻿Last login: Mon Apr 16 18:09:48 2018 from 172.25.26.113
+[root@localhost ~]# 
+Last login: Mon Apr 16 19:18:50 2018
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# apt-get install ping
+-bash: apt-get: command not found
+[root@localhost ~]#  install ping
+install: missing destination file operand after â€˜pingâ€™
+Try 'install --help' for more information.
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                      PORTS               NAMES
+e1549f53fe88        hello-world0.1      "echo 'Hello World'"   10 minutes ago      Exited (0) 10 minutes ago                       condescending_dijkstra
+70c154855e72        hello-world         "/hello"               20 minutes ago      Exited (0) 20 minutes ago                       silly_bhabha
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: alexcousins
+Password: 
+Login Succeeded
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# doc
+-bash: doc: command not found
+[root@localhost ~]# 
+[root@localhost ~]# docker images
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+hello-world0.1          latest              687d7e57678b        11 minutes ago      215 MB
+docker.io/ubuntu        16.04               c9d990395902        4 days ago          113 MB
+docker.io/hello-world   latest              e38bc07ac18e        5 days ago          1.85 kB
+[root@localhost ~]# docker tag 687d7e57678b alexcousins/train
+[root@localhost ~]# docker tag 687d7e57678b alexcousins/training
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker images
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+alexcousins/train       latest              687d7e57678b        12 minutes ago      215 MB
+alexcousins/training    latest              687d7e57678b        12 minutes ago      215 MB
+hello-world0.1          latest              687d7e57678b        12 minutes ago      215 MB
+docker.io/ubuntu        16.04               c9d990395902        4 days ago          113 MB
+docker.io/hello-world   latest              e38bc07ac18e        5 days ago          1.85 kB
+[root@localhost ~]# 
+[root@localhost ~]# docker push alexcousins/training
+The push refers to a repository [docker.io/alexcousins/training]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Last login: Tue Apr 17 15:57:37 2018 from desktop-69kv0oo.mshome.net
+
+
+
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker images
+
+
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+hello-world0.1          latest              687d7e57678b        24 minutes ago      215 MB
+alexcousins/train       latest              687d7e57678b        24 minutes ago      215 MB
+alexcousins/training    latest              687d7e57678b        24 minutes ago      215 MB
+docker.io/ubuntu        16.04               c9d990395902        4 days ago          113 MB
+docker.io/hello-world   latest              e38bc07ac18e        5 days ago          1.85 kB
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# ^C
+[root@localhost ~]# poweroff
+
+
+^C^C^C
+
+^X^C
+
+Last login: Tue Apr 17 16:28:15 2018 from desktop-69kv0oo.mshome.net
+
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# sudo su
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker info
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@localhost ~]# service docker start
+Redirecting to /bin/systemctl start docker.service
+[root@localhost ~]# docker info
+Containers: 2
+ Running: 0
+ Paused: 0
+ Stopped: 2
+Images: 8
+Server Version: 1.13.1
+Storage Driver: overlay2
+ Backing Filesystem: xfs
+ Supports d_type: true
+ Native Overlay Diff: true
+Logging Driver: journald
+Cgroup Driver: systemd
+Plugins: 
+ Volume: local
+ Network: bridge host macvlan null overlay
+Swarm: inactive
+Runtimes: docker-runc runc
+Default Runtime: docker-runc
+Init Binary: docker-init
+containerd version:  (expected: aa8187dbd3b7ad67d8e5e3a15115d3eef43a7ed1)
+runc version: N/A (expected: 9df8b306d01f59d3a8029be411de015b7304dd8f)
+init version: N/A (expected: 949e6facb77383876aeff8a6944dde66b3089574)
+Security Options:
+ seccomp
+  WARNING: You're not using the default seccomp profile
+  Profile: /etc/docker/seccomp.json
+ selinux
+Kernel Version: 3.10.0-693.21.1.el7.x86_64
+Operating System: CentOS Linux 7 (Core)
+OSType: linux
+Architecture: x86_64
+Number of Docker Hooks: 3
+CPUs: 1
+Total Memory: 1.701 GiB
+Name: localhost.localdomain
+ID: YWK5:DWSA:QXIK:HFFB:NYQ2:SULK:IMF5:ELC7:NR5N:TFUE:HBZ5:J4H4
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Username: alexcousins
+Registry: https://index.docker.io/v1/
+Experimental: false
+Insecure Registries:
+ 127.0.0.0/8
+Live Restore Enabled: false
+Registries: docker.io (secure)
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker images
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+alexcousins/training    latest              687d7e57678b        27 minutes ago      215 MB
+hello-world0.1          latest              687d7e57678b        27 minutes ago      215 MB
+alexcousins/train       latest              687d7e57678b        27 minutes ago      215 MB
+docker.io/ubuntu        16.04               c9d990395902        4 days ago          113 MB
+docker.io/hello-world   latest              e38bc07ac18e        5 days ago          1.85 kB
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker search gitlab
+INDEX       NAME                                                   DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+docker.io   docker.io/gitlab/gitlab-ce                             GitLab Community Edition docker image base...   1777                 [OK]
+docker.io   docker.io/sameersbn/gitlab                             Dockerized gitlab web server                    1022                 [OK]
+docker.io   docker.io/gitlab/gitlab-runner                         GitLab CI Multi Runner used to fetch and r...   309                  [OK]
+docker.io   docker.io/twang2218/gitlab-ce-zh                       æ±‰åŒ–çš„ GitLab ç¤¾åŒºç‰ˆ Docker Image                     99                   [OK]
+docker.io   docker.io/gitlab/gitlab-ee                             GitLab Enterprise Edition docker image bas...   88                   
+docker.io   docker.io/jangrewe/gitlab-ci-android                   GitLab CI image for building Android apps       35                   [OK]
+docker.io   docker.io/centurylink/gitlab                           This image uses the image from sameersbn /...   24                   [OK]
+docker.io   docker.io/gitlab/dind                                                                                  21                   [OK]
+docker.io   docker.io/cdrx/rancher-gitlab-deploy                   Painless deployment of projects built with...   19                   [OK]
+docker.io   docker.io/edbizarro/gitlab-ci-pipeline-php             Build and test PHP applications with Gitla...   9                    
+docker.io   docker.io/klud/gitlab-runner                           GitLab Runner for ARM devices                   8                    
+docker.io   docker.io/ciricihq/gitlab-sonar-scanner                Gitlab Docker container to run sonar-scann...   5                    [OK]
+docker.io   docker.io/gitlab/gitlab-runner-helper                                                                  5                    
+docker.io   docker.io/gitlab/cog                                   GitLab Bundle for Cog                           3                    
+docker.io   docker.io/dockerphp/gitlab-ci-pipeline                 Gitlab CI pipeline for PHP applications         2                    [OK]
+docker.io   docker.io/adamkl/gitlab-merge-request-resource         Customized with support for gitlab ssh on ...   1                    [OK]
+docker.io   docker.io/benyoo/gitlab                                åŸºäºŽsameersbn/gitlab:8.9.4å’ŒGitLab ä¸­æ–‡ç¤¾åŒºç‰ˆ8.8.5...   1                    [OK]
+docker.io   docker.io/gotfix/gitlab                                Dockerized Gitlab with a lot of configurab...   1                    
+docker.io   docker.io/mastertinner/gitlab-merge-request-resource   A concourse resource to check for new merg...   1                    [OK]
+docker.io   docker.io/primetoninc/gitlab                           gitlab-ce                                       1                    [OK]
+docker.io   docker.io/sgillespie/gitlab-runner                     A Dockerized GitLab Runner that automatica...   1                    [OK]
+docker.io   docker.io/gitlab/gitlab-qa                             GitLab QA has a test suite that allows end...   0                    
+docker.io   docker.io/instrumentisto/gitlab-builder                Docker image with minimal toolchain requir...   0                    [OK]
+docker.io   docker.io/sicony/npm-cache-gitlab-mr                   Concourse CI npm cache resource for gitlab...   0                    
+docker.io   docker.io/stanfordlegion/gitlab-ci                     An image for Gitlab CI.                         0                    [OK]
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker pull gitlab/gitlab-ce
+Using default tag: latest
+Trying to pull repository docker.io/gitlab/gitlab-ce ... 
+latest: Pulling from docker.io/gitlab/gitlab-ce
+
+
+
+
+
+
+
+
+
+
+
+Digest: sha256:194d10fcb9421517ce739fb837d8b015bb9154969466e62b0ab057264f063f58
+Status: Downloaded newer image for docker.io/gitlab/gitlab-ce:latest
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+alexcousins/train            latest              687d7e57678b        48 minutes ago      215 MB
+alexcousins/training         latest              687d7e57678b        48 minutes ago      215 MB
+hello-world0.1               latest              687d7e57678b        48 minutes ago      215 MB
+docker.io/ubuntu             16.04               c9d990395902        4 days ago          113 MB
+docker.io/hello-world        latest              e38bc07ac18e        5 days ago          1.85 kB
+docker.io/gitlab/gitlab-ce   latest              cb7f154f4459        7 days ago          1.43 GB
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+Last login: Tue Apr 17 16:30:38 2018
+[root@localhost ~]# 
+[root@localhost ~]# docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+alexcousins/train            latest              687d7e57678b        5 hours ago         215 MB
+alexcousins/training         latest              687d7e57678b        5 hours ago         215 MB
+hello-world0.1               latest              687d7e57678b        5 hours ago         215 MB
+docker.io/ubuntu             16.04               c9d990395902        5 days ago          113 MB
+docker.io/hello-world        latest              e38bc07ac18e        6 days ago          1.85 kB
+docker.io/gitlab/gitlab-ce   latest              cb7f154f4459        7 days ago          1.43 GB
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# sudo docker run --detach \
+>     --hostname gitlab.example.com \
+>     --publish 443:443 --publish 80:80 --publish 22:22 \
+>     --name gitlab \
+>     --restart always \
+>     --volume /srv/gitlab/config:/etc/gitlab \
+>     --volume /srv/gitlab/logs:/var/log/gitlab \
+>     --volume /srv/gitlab/data:/var/opt/gitlab \
+>     gitlab/gitlab-ce:latest
+d19a9c66edb6d467eece4d253fda1c56134eec287d861c6edf2dc25bf16d4d6b
+/usr/bin/docker-current: Error response from daemon: driver failed programming external connectivity on endpoint gitlab (311e2680f19541a6079c3df29d2179daac80595701b612f56a48364ec7c247c3): Error starting userland proxy: listen tcp 0.0.0.0:22: bind: address already in use.
+[root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 22:22     --name gitlab     --restart always   [root@localhost ~]# docker images
+[root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 22:22     --name gitlab     --restart always     --volume /srv/gitlab/config:/etc/gitlab     --volume /srv/gitlab/logs:/var/log/gitlab     --volume /srv/gitlab/data:/var/opt/gitlab     gitlab/gitlab-ce:latest
+/usr/bin/docker-current: Error response from daemon: Conflict. The container name "/gitlab" is already in use by container d19a9c66edb6d467eece4d253fda1c56134eec287d861c6edf2dc25bf16d4d6b. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+[root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 22:22     --name gitlab     --restart always   [root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 22:22     --name gitlab     --restart always     --volume /srv/gitlab/config:/etc/gitlab     --volume /srv/gitlab/logs:/var/log/gitlab     --volume /srv/gitlab/data:/var/opt/gitlab     gitlab/gitlab-ce:latest
+/usr/bin/docker-current: Error response from daemon: Conflict. The container name "/gitlab" is already in use by container d19a9c66edb6d467eece4d253fda1c56134eec287d861c6edf2dc25bf16d4d6b. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# sudo docker run --detach \
+>     --hostname gitlab.example.com \
+>     --publish 443:443 --publish 80:80 --publish 22:22 \
+>     --name gitlab \
+>     --restart always \
+>     --volume /srv/gitlab/config:/etc/gitlab \
+>     --volume /srv/gitlab/logs:/var/log/gitlab \
+>     --volume /srv/gitlab/data:/var/opt/gitlab \
+> sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 22:22     --name gitlab     --restart always     --volume /srv/gitlab/config:/etc/gitlab     --volume /srv/gitlab/logs:/var/log/gitlab     --volume /srv/gitlab/data:/var/opt/gitlab \
+> 
+Unable to find image 'sudo:latest' locally
+Trying to pull repository docker.io/library/sudo ... 
+
+/usr/bin/docker-current: repository docker.io/sudo not found: does not exist or no pull access.
+See '/usr/bin/docker-current run --help'.
+[root@localhost ~]# 
+[root@localhost ~]# sudo docker run --detach \
+>     --hostname gitlab.example.com \
+>     --publish 443:443 --publish 80:80 --publish 23:22 \
+>     --name gitlab \
+>     --restart always \
+>     --volume /srv/gitlab/config:/etc/gitlab \
+>     --volume /srv/gitlab/logs:/var/log/gitlab \
+>     --volume /srv/gitlab/data:/var/opt/gitlab \
+>     gitlab/gitlab-ce:latest
+/usr/bin/docker-current: Error response from daemon: Conflict. The container name "/gitlab" is already in use by container d19a9c66edb6d467eece4d253fda1c56134eec287d861c6edf2dc25bf16d4d6b. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED              STATUS                   PORTS               NAMES
+d19a9c66edb6        gitlab/gitlab-ce:latest   "/assets/wrapper"      About a minute ago   Created                                      gitlab
+e1549f53fe88        hello-world0.1            "echo 'Hello World'"   5 hours ago          Exited (0) 5 hours ago                       condescending_dijkstra
+70c154855e72        hello-world               "/hello"               6 hours ago          Exited (0) 6 hours ago                       silly_bhabha
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker rmi d19a9c66edb
+Error response from daemon: No such image: d19a9c66edb:latest
+[root@localhost ~]# docker rmi d19a9c66edb6
+Error response from daemon: No such image: d19a9c66edb6:latest
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker stop d19a9c66edb
+d19a9c66edb
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+hello-world0.1               latest              687d7e57678b        5 hours ago         215 MB
+alexcousins/train            latest              687d7e57678b        5 hours ago         215 MB
+alexcousins/training         latest              687d7e57678b        5 hours ago         215 MB
+docker.io/ubuntu             16.04               c9d990395902        5 days ago          113 MB
+docker.io/hello-world        latest              e38bc07ac18e        6 days ago          1.85 kB
+docker.io/gitlab/gitlab-ce   latest              cb7f154f4459        7 days ago          1.43 GB
+[root@localhost ~]# docker rmi cb7f154f4459
+Error response from daemon: conflict: unable to delete cb7f154f4459 (must be forced) - image is being used by stopped container d19a9c66edb6
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS                   PORTS               NAMES
+d19a9c66edb6        gitlab/gitlab-ce:latest   "/assets/wrapper"      2 minutes ago       Created                                      gitlab
+e1549f53fe88        hello-world0.1            "echo 'Hello World'"   5 hours ago         Exited (0) 5 hours ago                       condescending_dijkstra
+70c154855e72        hello-world               "/hello"               6 hours ago         Exited (0) 6 hours ago                       silly_bhabha
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker stop d19a9c66edb6
+d19a9c66edb6
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps 
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[root@localhost ~]# docker ps  -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS                   PORTS               NAMES
+d19a9c66edb6        gitlab/gitlab-ce:latest   "/assets/wrapper"      2 minutes ago       Created                                      gitlab
+e1549f53fe88        hello-world0.1            "echo 'Hello World'"   5 hours ago         Exited (0) 5 hours ago                       condescending_dijkstra
+70c154855e72        hello-world               "/hello"               6 hours ago         Exited (0) 6 hours ago                       silly_bhabha
+[root@localhost ~]# 
+[root@localhost ~]# docker rm d19a9c66edb6
+d19a9c66edb6
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS               NAMES
+e1549f53fe88        hello-world0.1      "echo 'Hello World'"   5 hours ago         Exited (0) 5 hours ago                       condescending_dijkstra
+70c154855e72        hello-world         "/hello"               6 hours ago         Exited (0) 6 hours ago                       silly_bhabha
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# sudo docker run --detach \
+>     --hostname gitlab.example.com \
+>     --publish 443:443 --publish 80:80 --publish 23:22 \
+>     --name gitlab \
+>     --restart always \
+>     --volume /srv/gitlab/config:/etc/gitlab \
+>     --volume /srv/gitlab/logs:/var/log/gitlab \
+>     --volume /srv/gitlab/data:/var/opt/gitlab \
+>     gitlab/gitlab-ce:latest
+3c9ac0af84f7864199773be05afebc092df92d703aa1a732377b01f596a40011
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                            PORTS                                                          NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"   8 seconds ago       Up 2 seconds (health: starting)   0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 0.0.0.0:23->22/tcp   gitlab
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                          PORTS               NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"   3 minutes ago       Restarting (1) 39 seconds ago                       gitlab
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker exec gitlab /bin/bash
+Error response from daemon: Container 3c9ac0af84f7864199773be05afebc092df92d703aa1a732377b01f596a40011 is restarting, wait until the container is running
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                              PORTS               NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"   3 minutes ago       Restarting (1) About a minute ago                       gitlab
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                              PORTS               NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"   3 minutes ago       Restarting (1) About a minute ago                       gitlab
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                              PORTS               NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"   3 minutes ago       Restarting (1) About a minute ago                       gitlab
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                              PORTS               NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"   3 minutes ago       Restarting (1) About a minute ago                       gitlab
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 23:22     --name gitlab     --restart always   [root@localhost ~]# docker ps -a
+[root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 23:22     --name gitlab     --restart always     --volume /srv/gitlab/config:/etc/gitlab     --volume /srv/gitlab/logs:/var/log/gitlab     --volume /srv/gitlab/data:/var/opt/gitlab     gitlab/gitlab-ce:latest
+/usr/bin/docker-current: Error response from daemon: Conflict. The container name "/gitlab" is already in use by container 3c9ac0af84f7864199773be05afebc092df92d703aa1a732377b01f596a40011. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                              PORTS               NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"   4 minutes ago       Restarting (1) About a minute ago                       gitlab
+[root@localhost ~]# docker stop gitlb
+Error response from daemon: No such container: gitlb
+[root@localhost ~]# docker stop gitlab
+gitlab
+[root@localhost ~]# docker start gitlab
+gitlab
+[root@localhost ~]# docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS                                  PORTS               NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"   4 minutes ago       Restarting (1) Less than a second ago                       gitlab
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker stop gitlab
+gitlab
+[root@localhost ~]# 
+[root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 23:22     --name gitlab     --restart always   [root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 23:22     --name gitlab     --restart always     --volume /srv/gitlab/config:/etc/gitlab     --volume /srv/gitlab/logs:/var/log/gitlab     --volume /srv/gitlab/data:/var/opt/gitlab     gitlab/gitlab-ce:latest
+/usr/bin/docker-current: Error response from daemon: Conflict. The container name "/gitlab" is already in use by container 3c9ac0af84f7864199773be05afebc092df92d703aa1a732377b01f596a40011. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# sudo docker run -it\
+>     --hostname gitlab.example.com \
+>     --publish 443:443 --publish 80:80 --publish 23:22 \
+>     --name gitlab \
+>     --restart always \
+>     --volume /srv/gitlab/config:/etc/gitlab \
+>     --volume /srv/gitlab/logs:/var/log/gitlab \
+>     --volume /srv/gitlab/data:/var/opt/gitlab \
+>     gitlab/gitlab-ce:latest
+/usr/bin/docker-current: Error response from daemon: Conflict. The container name "/gitlab" is already in use by container 3c9ac0af84f7864199773be05afebc092df92d703aa1a732377b01f596a40011. You have to remove (or rename) that container to be able to reuse that name..
+See '/usr/bin/docker-current run --help'.
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS                      PORTS               NAMES
+3c9ac0af84f7        gitlab/gitlab-ce:latest   "/assets/wrapper"      5 minutes ago       Exited (0) 50 seconds ago                       gitlab
+e1549f53fe88        hello-world0.1            "echo 'Hello World'"   5 hours ago         Exited (0) 5 hours ago                          condescending_dijkstra
+70c154855e72        hello-world               "/hello"               6 hours ago         Exited (0) 6 hours ago                          silly_bhabha
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# docker rm 3c9ac0af84f7
+3c9ac0af84f7
+[root@localhost ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS               NAMES
+e1549f53fe88        hello-world0.1      "echo 'Hello World'"   5 hours ago         Exited (0) 5 hours ago                       condescending_dijkstra
+70c154855e72        hello-world         "/hello"               6 hours ago         Exited (0) 6 hours ago                       silly_bhabha
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# sudo docker run -it    --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 23:22     --name gitlab     --restart always     --vo[root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 23:22     --name gitlab     --restart always   [root@localhost ~]# docker stop gitlab
+[root@localhost ~]# sudo docker run --detach     --hostname gitlab.example.com     --publish 443:443 --publish 80:80 --publish 23:22     --name gitlab     --restart always   [root@localhost ~]# docker ps
+[root@localhost ~]# sudo docker run -it\
+>     --hostname gitlab.example.com \
+>     --publish 443:443 --publish 80:80 --publish 23:22 \
+>     --name gitlab \
+>     --restart always \
+>     --volume /srv/gitlab/config:/etc/gitlab \
+>     --volume /srv/gitlab/logs:/var/log/gitlab \
+>     --volume /srv/gitlab/data:/var/opt/gitlab \
+>     gitlab/gitlab-ce:latest
+Thank you for using GitLab Docker Image!
+Current version: gitlab-ce=10.6.4-ce.0
+
+Configure GitLab for your system by editing /etc/gitlab/gitlab.rb file
+And restart this container to reload settings.
+To do it use docker exec:
+
+  docker exec -it gitlab vim /etc/gitlab/gitlab.rb
+  docker restart gitlab
+
+For a comprehensive list of configuration options please see the Omnibus GitLab readme
+https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md
+
+If this container fails to start due to permission problems try to fix it by executing:
+
+  docker exec -it gitlab update-permissions
+  docker restart gitlab
+
+Installing gitlab.rb config...
+cp: cannot create regular file '/etc/gitlab/gitlab.rb': Permission denied
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# 
